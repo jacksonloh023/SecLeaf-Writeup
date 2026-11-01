@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hensel Garden Solver Proof</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 1000px; overflow: hidden; }
+  body { background: #07130d; color: #dce9df; font-family: Inter, system-ui, sans-serif; padding: 45px 60px; }
+  .header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 24px; }
+  h1 { margin: 0; color: #f1f8f3; font-size: 36px; letter-spacing: -.5px; }
+  .subtitle { color: #91aa98; margin-top: 7px; font-size: 17px; }
+  .badge { border: 1px solid #36774d; background: #0d2a19; color: #86efac; padding: 9px 16px; border-radius: 999px; font: 700 15px ui-monospace, monospace; }
+  .equations { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  .eq { background: #0d1d14; border: 1px solid #254231; border-radius: 10px; padding: 13px 17px; color: #b8d4c0; font: 16px/1.5 "DejaVu Sans Mono", monospace; }
+  .terminal { background: #060b08; border: 1px solid #294334; border-radius: 13px; overflow: hidden; box-shadow: 0 18px 55px rgba(0,0,0,.38); }
+  .bar { height: 44px; background: #122018; border-bottom: 1px solid #294334; display: flex; align-items: center; padding: 0 17px; gap: 8px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .red { background:#ff5f57 } .yellow { background:#febc2e } .green { background:#28c840 }
+  .bar-title { margin-left: 11px; color:#91aa98; font: 14px ui-monospace, monospace; }
+  pre { margin: 0; padding: 22px 28px 25px; color: #d6e3da; font: 15.5px/1.48 "DejaVu Sans Mono", monospace; white-space: pre-wrap; }
+  .cmd { color:#67e8f9; font-weight:700 } .ok { color:#86efac } .key { color:#facc15 } .flag { color:#07130d; background:#86efac; font-weight:900; padding:3px 8px; border-radius:5px; }
+  .footer { display:flex; justify-content:space-between; margin-top:18px; color:#789181; font-size:14px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div><h1>Hensel Garden — Solver Proof</h1><div class="subtitle">Prime-power root lifting, CRT reconstruction, and authenticated decryption</div></div>
+    <div class="badge">AES-GCM VERIFIED</div>
+  </div>
+  <div class="equations">
+    <div class="eq">(seed + 87)² ≡ 2090995815874869393993 (mod 2⁷²)</div>
+    <div class="eq">(seed + 143)² ≡ 246419994095244398264902 (mod 3⁵¹)</div>
+  </div>
+  <div class="terminal">
+    <div class="bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="bar-title">Hensel_Garden — solve_hensel_garden.py</span></div>
+    <pre><span class="cmd">$ python3 solve_hensel_garden.py data.json</span>
+
+<span class="ok">[+]</span> Seed bound: 0 &lt;= seed &lt; 2^128
+<span class="ok">[+]</span> Observation 1: modulus = 2^72
+    square roots (4): [311693314961566273123, 2049489926473256333725,
+                       2672876556396388879971, 4410673167908078940573]
+    seed residues (4): [311693314961566273036, 2049489926473256333638,
+                         2672876556396388879884, 4410673167908078940486]
+<span class="ok">[+]</span> Observation 2: modulus = 3^51
+    square roots (2): [143629324417692064196608, 2010064638657865702114139]
+    seed residues (2): [143629324417692064196465, 2010064638657865702113996]
+<span class="ok">[+]</span> CRT combinations: 8
+<span class="ok">[+]</span> Combined modulus exceeds 2^128: True
+<span class="ok">[+]</span> In-range CRT candidates tested: 1
+<span class="ok">[+]</span> Recovered seed: <span class="key">282779946134366997745983790016833981964</span>
+<span class="ok">[+]</span> Seed hex: d4bd6fc49311dd10e59d1a891c1b0e0c
+<span class="ok">[+]</span> Public observation checks: [True, True]
+<span class="ok">[+]</span> AES-GCM authentication: valid
+<span class="ok">[+]</span> Flag: <span class="flag">SecLeaf{r00ts_gr0w_through_pr1me_p0w3rs}</span></pre>
+  </div>
+  <div class="footer"><span>Source: Hensel_Garden/data.json</span><span>Solver output retained in assets/solver-output.txt</span></div>
+</body>
+</html>

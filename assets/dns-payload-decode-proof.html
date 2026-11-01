@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DNS Payload Extraction Proof</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 900px; overflow: hidden; }
+  body {
+    background: #0b1020;
+    color: #d8e2f0;
+    font-family: Inter, system-ui, sans-serif;
+    padding: 54px 68px;
+  }
+  .header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 30px; }
+  h1 { margin: 0; color: #f4f7fb; font-size: 34px; letter-spacing: -0.5px; }
+  .subtitle { color: #8da2ba; font-size: 17px; margin-top: 8px; }
+  .badge {
+    border: 1px solid #275f49; background: #102c24; color: #6ee7b7;
+    padding: 9px 15px; border-radius: 999px; font: 700 15px ui-monospace, monospace;
+  }
+  .terminal {
+    background: #080c14;
+    border: 1px solid #273449;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.38);
+    overflow: hidden;
+  }
+  .bar {
+    height: 46px; background: #151d2b; border-bottom: 1px solid #273449;
+    display: flex; align-items: center; padding: 0 18px; gap: 9px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .red { background: #ff5f57; } .yellow { background: #febc2e; } .green { background: #28c840; }
+  .bar-title { margin-left: 12px; color: #91a3ba; font: 14px ui-monospace, monospace; }
+  pre {
+    margin: 0; padding: 27px 32px 31px;
+    color: #d5deea; font: 18px/1.53 "DejaVu Sans Mono", ui-monospace, monospace;
+    white-space: pre-wrap;
+  }
+  .cmd { color: #67e8f9; font-weight: 700; }
+  .ok { color: #6ee7b7; }
+  .key { color: #fbbf24; }
+  .flag { color: #86efac; font-weight: 800; background: #102c24; padding: 2px 7px; border-radius: 5px; }
+  .footer { margin-top: 20px; color: #7f93aa; font-size: 15px; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>DNS Payload Extraction</h1>
+      <div class="subtitle">Reproducible output generated directly from suspicious_activity.pcap</div>
+    </div>
+    <div class="badge">PCAP VERIFIED</div>
+  </div>
+
+  <div class="terminal">
+    <div class="bar">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="bar-title">SecLeaf Writeup — extract_dns_payload.py</span>
+    </div>
+    <pre><span class="cmd">$ python3 extract_dns_payload.py suspicious_activity.pcap</span>
+
+<span class="ok">[+]</span> Capture: suspicious_activity.pcap
+<span class="ok">[+]</span> DNS queries inspected: 39
+<span class="ok">[+]</span> Suspicious domain: <span class="key">evil.com</span>
+<span class="ok">[+]</span> Ordered DNS fragments:
+    packet 167: 192.168.1.20 -&gt; 8.8.8.8  U2VjTGVhZn.evil.com  fragment=U2VjTGVhZn
+    packet 293: 192.168.1.20 -&gt; 8.8.8.8  tENDc0XzN4.evil.com  fragment=tENDc0XzN4
+    packet 395: 192.168.1.20 -&gt; 8.8.8.8  ZjFsX0RONX.evil.com  fragment=ZjFsX0RONX
+    packet 502: 192.168.1.20 -&gt; 8.8.8.8  0=.evil.com          fragment=0=
+<span class="ok">[+]</span> Reconstructed Base64: <span class="key">U2VjTGVhZntENDc0XzN4ZjFsX0RONX0=</span>
+<span class="ok">[+]</span> Decoded payload: <span class="flag">SecLeaf{D474_3xf1l_DN5}</span>
+
+<span class="ok">[verified]</span> Flag reconstructed directly from the PCAP.</pre>
+  </div>
+
+  <div class="footer">
+    <span>Source host: 192.168.1.20 · Resolver: 8.8.8.8 · Protocol: DNS</span>
+    <span>SHA256: 36de1b46547be01aa…</span>
+  </div>
+</body>
+</html>

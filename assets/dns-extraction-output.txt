@@ -1,0 +1,10 @@
+[+] Capture: suspicious_activity.pcap
+[+] DNS queries inspected: 39
+[+] Suspicious domain: evil.com
+[+] Ordered DNS fragments:
+    packet 167: 192.168.1.20 -> 8.8.8.8  U2VjTGVhZn.evil.com  fragment=U2VjTGVhZn
+    packet 293: 192.168.1.20 -> 8.8.8.8  tENDc0XzN4.evil.com  fragment=tENDc0XzN4
+    packet 395: 192.168.1.20 -> 8.8.8.8  ZjFsX0RONX.evil.com  fragment=ZjFsX0RONX
+    packet 502: 192.168.1.20 -> 8.8.8.8  0=.evil.com  fragment=0=
+[+] Reconstructed Base64: U2VjTGVhZntENDc0XzN4ZjFsX0RONX0=
+[+] Decoded payload: SecLeaf{D474_3xf1l_DN5}
