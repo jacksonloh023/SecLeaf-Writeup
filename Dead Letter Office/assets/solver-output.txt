@@ -1,0 +1,18 @@
+$ xxd -g 1 -l 16 postcard.grid
+00000000: 48 50 4c 32 28 00 14 00 ec d9 cb 41 c6 39 00 00  HPL2(......A.9..
+
+$ xxd -g 1 -s 0x2060 -l 16 dead_letter_office
+00002060: 44 4c 4f 32 85 eb b4 4f 9d 10 4f da 07 07 0e 00  DLO2...O..O.....
+
+$ python3 solve_dead_letter_office.py postcard.grid dead_letter_office
+[+] Grid: postcard.grid
+[+] DLO2 constants offset: 0x2060
+[+] Header: length=40, pairs=20, seed=0x39c6
+[+] FNV-1a check: 0x41cbd9ec (valid)
+[+] Inner verifier rounds: 14
+[+] Unique character pairs recovered: 20/20
+[+] Accepted input: SecLeaf{th3_p0st0ff1c3_h4s_4_d4rk_s1d3!}
+
+$ work=$(mktemp -d); cp dead_letter_office postcard.grid "$work"; chmod 700 "$work/dead_letter_office"
+$ (cd "$work" && ./dead_letter_office 'SecLeaf{th3_p0st0ff1c3_h4s_4_d4rk_s1d3!}')
+Delivered.

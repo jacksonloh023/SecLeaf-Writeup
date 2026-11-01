@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Nonce Nursery — Verified Solver Proof</title><style>*{box-sizing:border-box}html,body{margin:0;width:1600px;height:1180px;overflow:hidden}body{background:#100b18;color:#e8e0f2;font-family:Inter,system-ui,sans-serif;padding:42px 58px}.header{display:flex;justify-content:space-between;align-items:end;margin-bottom:18px}h1{margin:0;color:#faf7ff;font-size:36px;letter-spacing:-.5px}.subtitle{color:#ae9abd;margin-top:7px;font-size:17px}.badge{border:1px solid #76519a;background:#281538;color:#d8b4fe;padding:9px 16px;border-radius:999px;font:700 15px ui-monospace,monospace}.equations{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:16px}.eq{background:#1a1125;border:1px solid #412b55;border-radius:10px;padding:12px 16px;color:#d0bfdf;font:15px/1.45 "DejaVu Sans Mono",monospace}.terminal{background:#09070d;border:1px solid #463056;border-radius:13px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.42)}.bar{height:44px;background:#1c1424;border-bottom:1px solid #463056;display:flex;align-items:center;padding:0 17px;gap:8px}.dot{width:11px;height:11px;border-radius:50%}.red{background:#ff5f57}.yellow{background:#febc2e}.green{background:#28c840}.bar-title{margin-left:11px;color:#ae9abd;font:14px ui-monospace,monospace}pre{margin:0;padding:19px 28px 20px;color:#e1d9e9;font:14px/1.37 "DejaVu Sans Mono",monospace;white-space:pre-wrap}.cmd{color:#67e8f9;font-weight:700}.ok{color:#c084fc}.key{color:#facc15}.flag{color:#160a20;background:#d8b4fe;font-weight:900;padding:3px 8px;border-radius:5px}.footer{display:flex;justify-content:space-between;margin-top:14px;color:#927fa1;font-size:14px}</style></head><body><div class="header"><div><h1>Nonce Nursery — Solver Proof</h1><div class="subtitle">Every eligible affine ECDSA window evaluated on secp256k1</div></div><div class="badge">SIGNATURES VERIFIED</div></div><div class="equations"><div class="eq">kᵢ = sᵢ⁻¹(hᵢ + rᵢ·d) = αᵢ·d + βᵢ (mod n)</div><div class="eq">Δᵢ₊₁ = A·Δᵢ ⇒ Δ₁² = Δ₀Δ₂ and Δ₂² = Δ₁Δ₃</div></div><div class="terminal"><div class="bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="bar-title">Nonce_Nursery — solve_nonce_nursery.py</span></div><pre><span class="cmd">$ python3 solve_nonce_nursery.py data.json</span>
+
+<span class="ok">[+]</span> Curve: secp256k1
+<span class="ok">[+]</span> Signatures: 11
+<span class="ok">[+]</span> Testing every consecutive length-5 window
+    window 00-04: polynomials=False recurrence=False public_key=False
+    window 01-05: polynomials=False recurrence=False public_key=False
+    window 02-06: polynomials=False recurrence=False public_key=False
+    window 03-07: polynomials=True  recurrence=True  public_key=True
+    window 04-08: polynomials=False recurrence=False public_key=False
+    window 05-09: polynomials=False recurrence=False public_key=False
+    window 06-10: polynomials=False recurrence=False public_key=False
+<span class="ok">[+]</span> Valid affine windows: 1
+<span class="ok">[+]</span> Vulnerable window: <span class="key">03-07</span>
+<span class="ok">[+]</span> Private scalar hex: f833e0b49cd9652c84292c5097b7dbdfd4005fdd2d1cfa7c975cce14a34616de
+<span class="ok">[+]</span> Public-key check: True
+<span class="ok">[+]</span> All 11 nonce/r checks: True
+<span class="ok">[+]</span> AES-GCM authentication: valid
+<span class="ok">[+]</span> Flag: <span class="flag">SecLeaf{4ff1n3_n0nc3s_b3nd_th3_curv3}</span></pre></div><div class="footer"><span>Exactly one of seven candidate windows is valid</span><span>Source: Nonce_Nursery/data.json</span></div></body></html>

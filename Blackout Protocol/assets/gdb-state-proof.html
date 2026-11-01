@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Blackout Protocol — GDB State Extraction</title>
+<style>body{margin:0;background:#0b0f14;color:#d8e6ef;font:20px/1.48 "DejaVu Sans Mono",monospace}main{width:1500px;min-height:900px;padding:45px 60px;box-sizing:border-box}h1{margin:0 0 10px;font:700 35px Arial,sans-serif;color:#fff}.sub{font:18px Arial,sans-serif;color:#9eb8c8;margin:0 0 30px}.term{background:#030608;border:1px solid #2b5b6d;border-radius:12px;padding:28px 32px;white-space:pre-wrap;box-shadow:inset 0 0 30px #07151d}.mark{color:#78e5a1}.note{font:17px Arial,sans-serif;color:#a9c1cd;margin-top:22px}</style></head>
+<body><main><h1>Blackout Protocol — GDB State Extraction</h1><p class="sub">Rendered excerpt of actual GDB output from a disposable, hash-matched verifier copy. It establishes the debugger checkpoints used by the solver to capture the artifact-derived seed, S-box, and target-state boundary.</p><div class="term">Program stopped.
+0x00007ffff7fe4540 in _start () from /lib64/ld-linux-x86-64.so.2
+Breakpoint 1 at 0x55555555593b
+
+Breakpoint 1, 0x000055555555593b in ?? ()
+<span class="mark">[checkpoint 0x193b: artifact-derived seed and S-box]</span>
+r15  0x98b5f1c61c260485
+r13  0x5555555590c0
+0x5555555590c0:  0xf2  0xf8  0xa1  0xe7  0x41  0xb8  0x4f  0x91
+0x5555555590c8:  0x64  0x1c  0x26  0x9f  0xc3  0xa3  0xa4  0x8a
+
+Breakpoint 2 at 0x555555555b3a
+Breakpoint 2, 0x0000555555555b3a in ?? ()
+<span class="mark">[checkpoint 0x1b3a: probe output followed by 384-byte target]</span>
+0x7fffffffc890:  0x4a  0xe5  0x2a  0xb1  0x4f  0x80  0x31  0x15
+0x7fffffffc898:  0x14  0x33  0xca  0x8a  0xde  0x03  0xe8  0x1e
+0x7fffffffc8a0:  0x7f  0x2d  0x1c  0x6a  0x66  0x6c  0xf1  0xb6
+0x7fffffffc8a8:  0x26  0xbe  0x37  0x78  0xcf  0xf2  0xaa  0x64
+0x7fffffffc8b0:  0x54  0x9b  0x7f  0x95  0xd3  0x68  0xf3  0x92
+0x7fffffffc8b8:  0x6c  0xda  0x02  0xc6  0x04  0x0d  0x53  0x8b
+...
+0x7fffffffcb70:  0x40  0x16  0x4c  0x2a  0x20  0x3e  0xd3  0xc8
+0x7fffffffcb78:  0x52  0x2c  0x2d  0x4e  0xb3  0x45  0xf0  0x35
+0x7fffffffcce0:  0x3c  0x6c  0x89  0x56  0x10  0x3b  0x98  0xb4
+0x7fffffffcce8:  0x34  0xc7  0xac  0x13  0xe1  0x2f  0xfe  0x8b</div><p class="note">Full unabridged captured output: <code>Blackout Protocol/assets/gdb-state-extraction.txt</code>. The solver validates the recovered 48-byte candidate with an independent forward round trip and a separate original-binary run.</p></main></body></html>

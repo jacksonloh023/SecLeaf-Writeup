@@ -1,0 +1,11 @@
+$ python3 solve_shadow_chronometry.py shadow_chronometry.jpg
+[+] Image: shadow_chronometry.jpg
+[+] SHA256: 1949e22e80223ce2622f025f3a0f14591eb63ab45911da57d005015061d71e17
+[+] JPEG EXIF segment present: False
+[+] GPS metadata present: False
+[+] Landmark identified visually: Obelisco de Buenos Aires, Argentina
+[+] Geocoder: OpenStreetMap/Nominatim
+[+] Result: Obelisco, Avenida Corrientes, Microcentro, San Nicolás, Buenos Aires, Comuna 1, Ciudad Autónoma de Buenos Aires, C1043AAJ, Argentina
+[+] Coordinates: latitude=-34.6037093, longitude=-58.3816296
+[+] Rounded to four decimals: -34.6037, -58.3816
+[+] Flag: SecLeaf{-34.6037,-58.3816}

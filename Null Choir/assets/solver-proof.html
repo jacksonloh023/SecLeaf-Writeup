@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Null Choir — VM Inversion Proof</title><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0b0d14;color:#e7edf8;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}main{width:1500px;margin:0 auto;padding:52px 70px}.eyebrow{color:#9eb7ff;letter-spacing:.14em;font-size:16px;font-weight:800}h1{font:700 43px/1.12 system-ui,sans-serif;margin:12px 0}.sub{font:18px/1.45 system-ui,sans-serif;color:#b8c4da;margin:0 0 27px}.panel{background:#111827;border:1px solid #314363;border-radius:15px;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.35)}.bar{padding:15px 20px;background:#172238;border-bottom:1px solid #314363;color:#c4d1e9}.dots{color:#81a5ff;letter-spacing:3px;margin-right:12px}pre{margin:0;padding:25px 30px;font-size:16px;line-height:1.5;white-space:pre-wrap;color:#dbe5f8}.good{color:#8af0b2;font-weight:800}.key{color:#f6d66d}.note{margin-top:24px;padding:14px 18px;border-left:4px solid #8aa9ff;background:#111d33;color:#c8d5eb;font:17px/1.5 system-ui,sans-serif}.note b{color:#fff}</style></head><body><main><div class="eyebrow">EVIDENCE 01 · STATIC VM INVERSION + ORIGINAL-BINARY VALIDATION</div><h1>Null Choir: 4,096-step VM proof</h1><p class="sub">Rendered from the actual inspection, static solver, and disposable-copy validation outputs.</p><section class="panel"><div class="bar"><span class="dots">● ● ●</span> Null Choir verification</div><pre>$ xxd -g 1 -l 16 canticle.score
+00000000: 4e 43 53 32 00 10 00 00 31 ec dd 78 e6 e5 1f 30  NCS2....1..x...0
+
+$ xxd -g 1 -l 16 echoes.trace
+00000000: 45 43 48 38 20 90 cf ca 49 16 04 45 6a c6 c0 21  ECH8 ...I..Ej..!
+
+$ python3 solve_null_choir.py
+score_header=0x301fe5e678ddec31 rbp=0x866a952e86bb7d8b score_bank=0 trace_key=0xe5
+validated_vm_records=<span class="key">4096</span>
+candidate_hex=5365634c6561667b7468335f63683031725f73316e67355f316e5f3568346430775f6d346368316e333521212121217d
+candidate_ascii=b'<span class="good">SecLeaf{th3_ch01r_s1ng5_1n_5h4d0w_m4ch1n35!!!!!}</span>'
+
+$ ./null_choir 'SecLeaf{th3_ch01r_s1ng5_1n_5h4d0w_m4ch1n35!!!!!}'
+<span class="good">Harmony.</span>
+<span class="good">[+] Exit code: 0</span></pre></section><p class="note"><b>Proof chain:</b> `canticle.score` supplies encrypted VM records, `echoes.trace` supplies integrity-checked auxiliary state, and the solver reverses the state transformations and all reversible VM operations. The recovered 48-byte input is accepted by an executable copy paired with identical companion files.</p></main></body></html>

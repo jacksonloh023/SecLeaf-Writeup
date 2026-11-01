@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Shadow Chronometry — Coordinate Proof</title><style>body{margin:0;background:#0b1020;color:#e8eefc;font-family:ui-monospace,monospace}main{width:1500px;margin:auto;padding:58px 72px}.k{color:#76d6ff;letter-spacing:.13em;font-weight:bold}h1{font:700 43px system-ui;margin:12px 0}.sub,.note{font:18px system-ui;color:#b7c6df}.panel{background:#111a2f;border:1px solid #26365a;border-radius:16px;overflow:hidden}.bar{padding:15px 20px;background:#17233f;border-bottom:1px solid #26365a}.dots{color:#76d6ff}pre{margin:0;padding:28px 30px;font-size:18px;line-height:1.6;white-space:pre-wrap}.flag{color:#76f5a6;font-weight:bold}.note{margin-top:24px;border-left:4px solid #76d6ff;padding:14px 18px;background:#101a31}</style></head><body><main><div class="k">EVIDENCE 01 · IMAGE + GEOCODER VERIFICATION</div><h1>Shadow Chronometry: coordinate proof</h1><p class="sub">Rendered from the verified output of <code>solve_shadow_chronometry.py</code>.</p><section class="panel"><div class="bar"><span class="dots">● ● ●</span> Shadow Chronometry verification</div><pre>$ python3 solve_shadow_chronometry.py shadow_chronometry.jpg
+[+] SHA256: 1949e22e80223ce2622f025f3a0f14591eb63ab45911da57d005015061d71e17
+[+] JPEG EXIF segment present: False
+[+] GPS metadata present: False
+[+] Landmark identified visually: Obelisco de Buenos Aires, Argentina
+[+] Geocoder: OpenStreetMap/Nominatim
+[+] Result: Obelisco, Avenida Corrientes, Microcentro, San Nicolás,
+    Buenos Aires, Ciudad Autónoma de Buenos Aires, Argentina
+[+] Coordinates: latitude=-34.6037093, longitude=-58.3816296
+[+] Rounded to four decimals: -34.6037, -58.3816
+<span class="flag">[+] Flag: SecLeaf{-34.6037,-58.3816}</span></pre></section><p class="note"><b>Proof chain:</b> the supplied image has no EXIF/GPS coordinates; visible landmark clues identify the Obelisco; the geocoder provides full-precision coordinates that round to the submitted flag.</p></main></body></html>

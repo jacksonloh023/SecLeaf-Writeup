@@ -1,0 +1,12 @@
+<!doctype html><html><head><meta charset="utf-8"><title>LeafSync — DNS Exfiltration Proof</title><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0b1020;color:#e8eefc;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}main{width:1500px;margin:0 auto;padding:58px 72px}.eyebrow{color:#76d6ff;letter-spacing:.13em;font-size:17px;font-weight:700}h1{margin:13px 0 10px;font:700 43px/1.15 system-ui,sans-serif;letter-spacing:-.03em}.subtitle{margin:0 0 34px;color:#aebcd6;font:19px/1.55 system-ui,sans-serif}.panel{background:#111a2f;border:1px solid #26365a;border-radius:16px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.28)}.bar{padding:15px 20px;background:#17233f;border-bottom:1px solid #26365a;color:#c8d4ee;font-size:16px}.dots{color:#76d6ff;margin-right:10px;letter-spacing:3px}pre{margin:0;padding:27px 30px;color:#d8e4fa;font:17px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap}.flag{color:#76f5a6;font-weight:800}.note{margin-top:26px;border-left:4px solid #76d6ff;padding:13px 18px;color:#c7d6ed;background:#101a31;font:17px/1.55 system-ui,sans-serif}.note strong{color:#fff}</style></head><body><main><div class="eyebrow">EVIDENCE 02 · RENDERED SOLVER OUTPUT</div><h1>LeafSync: DNS-label exfiltration proof</h1><p class="subtitle">Rendered from verified parser output; the companion Wireshark image directly shows the six query/reply pairs from the supplied capture.</p><section class="panel"><div class="bar"><span class="dots">● ● ●</span> LeafSync — solve_leafsync.py</div><pre>$ python3 solve_leafsync.py leafsync.pcap
+[+] HTTP helper request/response text found: packets 24/25
+[+] Download path: /tools/leafsync-helper.sh
+[+] LeafSync helper content observed: True
+[+] Suspicious parent domain: sync-cache.training.local
+[+] Exfiltrating workstation: 10.20.30.15
+[+] Ordered DNS fragments (6):
+    01.U2VjTGVh   02.ZntkbnNf   03.bGFiZWxz
+    04.X2hpZGVf   05.dGhlX3Ry   06.dXRofQ==
+[+] Matching DNS responses: 6/6, rcode=NXDOMAIN (all=True)
+[+] Reconstructed Base64: U2VjTGVhZntkbnNfbGFiZWxzX2hpZGVfdGhlX3RydXRofQ==
+<span class="flag">[+] Decoded data: SecLeaf{dns_labels_hide_the_truth}</span></pre></section><p class="note"><strong>Proof chain:</strong> numbered labels establish a contiguous order, the final padding supports Base64 decoding, and each matching DNS response is an NXDOMAIN reply. Exfiltration occurs in the outbound query names, not in the responses.</p></main></body></html>

@@ -1,0 +1,17 @@
+$ python3 solve_leafsync.py leafsync.pcap
+[+] Capture: leafsync.pcap
+[+] HTTP helper request/response text found: packets 24/25
+[+] Download path: /tools/leafsync-helper.sh
+[+] LeafSync helper content observed: True
+[+] Suspicious parent domain: sync-cache.training.local
+[+] Exfiltrating workstation: 10.20.30.15
+[+] Ordered DNS fragments (6):
+    packet 36: 10.20.30.15  01.U2VjTGVh
+    packet 38: 10.20.30.15  02.ZntkbnNf
+    packet 40: 10.20.30.15  03.bGFiZWxz
+    packet 42: 10.20.30.15  04.X2hpZGVf
+    packet 44: 10.20.30.15  05.dGhlX3Ry
+    packet 46: 10.20.30.15  06.dXRofQ==
+[+] Matching DNS responses: 6/6, rcode=NXDOMAIN (all=True)
+[+] Reconstructed Base64: U2VjTGVhZntkbnNfbGFiZWxzX2hpZGVfdGhlX3RydXRofQ==
+[+] Decoded data: SecLeaf{dns_labels_hide_the_truth}

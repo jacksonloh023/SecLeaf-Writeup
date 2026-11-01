@@ -1,0 +1,20 @@
+[+] Input: signal.wav
+[+] Format: PCM 16-bit mono at 44100 Hz
+[+] Total duration: 30.178322 s
+[+] Estimated noise RMS: 882.95
+[+] Burst threshold: 4414.74
+[+] Burst start: 30.000000 s
+[+] Burst samples: 7864
+[+] Burst duration: 0.178322 s
+[+] Modulation: Bell 202 AFSK, 1200 baud
+[+] Mark/1: 1200 Hz; Space/0: 2200 Hz
+[+] Samples per symbol: 36.7500
+[+] Symbols recovered: 214
+[+] Mean tone confidence: 0.9226
+[+] UART format: 8N1, LSB first
+[+] Best UART bit offset: 2
+[+] Valid UART frames: 21/21
+[+] Printable/control bytes: 21/21
+[+] Payload hex: 5365634c6561667b52346431305f57347633357d0a
+[+] Payload repr: 'SecLeaf{R4d10_W4v35}\n'
+[+] Secret message: SecLeaf{R4d10_W4v35}

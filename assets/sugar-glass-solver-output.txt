@@ -1,0 +1,13 @@
+$ objdump -s -j .rodata sugar_glass
+ 2020 53475232 1d0b0542 e55fb15d dfad9bb9  SGR2...B._.]....
+
+$ python3 solve_sugar_glass.py sugar_glass
+[+] Binary: sugar_glass
+[+] SGR2 table offset: 0x2020
+[+] Parameters: length=29, step=11, initial_index=5, initial_state=0x42
+[+] Unique byte candidates recovered: 29/29
+[+] Accepted input: SecLeaf{gl455_h0ld5_4_53cr3t}
+
+$ work=$(mktemp -d); cp sugar_glass "$work/sugar_glass"; chmod 700 "$work/sugar_glass"
+$ "$work/sugar_glass" 'SecLeaf{gl455_h0ld5_4_53cr3t}'
+Filed.

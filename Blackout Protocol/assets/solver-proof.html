@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blackout Protocol — Verified Recovery</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;background:#05080c;color:#e8eef7;font:18px/1.42 Arial,sans-serif}
+  main{width:1500px;min-height:920px;margin:0 auto;padding:62px 72px;background:radial-gradient(circle at 88% 8%,#123547 0,#071019 34%,#05080c 70%)}
+  h1{margin:0;color:#f5fbff;font-size:54px;letter-spacing:.5px} .sub{color:#8eb3c8;font-size:22px;margin:8px 0 42px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}.card{background:#0b151f;border:1px solid #275064;border-radius:14px;padding:26px 29px;min-height:200px}
+  h2{font-size:20px;color:#77d7ff;letter-spacing:1.2px;text-transform:uppercase;margin:0 0 15px}.big{font-size:28px;font-weight:700}.mono{font:19px/1.55 "DejaVu Sans Mono",monospace;color:#d8ecf7;white-space:pre-wrap}.ok{color:#7ef0aa}.warn{color:#ffd479}.flag{margin-top:25px;border:2px solid #41b8e6;background:#061923;border-radius:14px;padding:25px 30px}.flag .mono{font-size:28px;font-weight:bold;color:#baf1ff}
+  .foot{margin-top:26px;color:#9db5c4;font-size:18px}
+</style>
+</head>
+<body><main>
+  <h1>Blackout Protocol</h1>
+  <div class="sub">Artifact-gated recovery — decoys excluded before inversion</div>
+  <div class="grid">
+    <section class="card"><h2>Supplied artifacts</h2><div class="mono">blackout_protocol  stripped PIE verifier
+transmission.pcap  290 UDP records
+retained.mem      0x4000 bytes, M16B @ 0x180
+incident.journal  JRN4 + 224 records</div></section>
+    <section class="card"><h2>Trusted selection</h2><div class="mono">memory marker:              0x37
+PCAP BKP5 frames:             290
+marker-0x37 candidates:       240
+authenticated JR records:      48
+index coverage:              0..47</div></section>
+    <section class="card"><h2>Why capture order matters</h2><div class="mono">The classic PCAP record sequence is not
+chronologically sorted. Timestamp inversions:
+record 110 → 111
+record 220 → 221
+
+Solver preserves on-disk record order.</div></section>
+    <section class="card"><h2>Recovery and validation</h2><div class="mono">candidate length required: 48 bytes
+52 reversible verifier rounds inverted
+forward round-trip: <span class="ok">passed</span>
+disposable original-binary run:
+<span class="ok">Authenticated.  exit code 0</span></div></section>
+  </div>
+  <section class="flag"><h2>Recovered accepted input / flag</h2><div class="mono">SecLeaf{n01s3_1n_th3_w1r35_4nd_4ft3r1m4g3s!!!!!}</div></section>
+  <div class="foot">This card summarizes parser and verifier results. See the original artifacts, solver output, and binary-validation log for reproducible evidence.</div>
+</main></body></html>

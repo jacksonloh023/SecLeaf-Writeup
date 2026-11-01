@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Dead Letter Office — Verifier Proof</title><style>body{margin:0;background:#0b1020;color:#e8eefc;font-family:ui-monospace,monospace}main{width:1500px;margin:auto;padding:58px 72px}.k{color:#76d6ff;letter-spacing:.13em;font-weight:bold}h1{font:700 43px system-ui;margin:12px 0}.sub,.note{font:18px system-ui;color:#b7c6df}.panel{background:#111a2f;border:1px solid #26365a;border-radius:16px;overflow:hidden}.bar{padding:15px 20px;background:#17233f;border-bottom:1px solid #26365a}.dots{color:#76d6ff}pre{margin:0;padding:28px 30px;font-size:18px;line-height:1.58;white-space:pre-wrap}.flag{color:#76f5a6;font-weight:bold}.note{margin-top:24px;border-left:4px solid #76d6ff;padding:14px 18px;background:#101a31}</style></head><body><main><div class="k">EVIDENCE 01 · CONTAINER + ORIGINAL-BINARY ACCEPTANCE</div><h1>Dead Letter Office: HPL2/DLO2 proof</h1><p class="sub">Rendered from the actual postcard header, verifier constants, solver run, and disposable-copy acceptance test.</p><section class="panel"><div class="bar"><span class="dots">● ● ●</span> Dead Letter Office verification</div><pre>$ xxd -g 1 -l 16 postcard.grid
+00000000: 48 50 4c 32 28 00 14 00 ec d9 cb 41 c6 39 00 00  HPL2(......A.9..
+
+$ xxd -g 1 -s 0x2060 -l 16 dead_letter_office
+00002060: 44 4c 4f 32 85 eb b4 4f 9d 10 4f da 07 07 0e 00  DLO2...O..O.....
+
+$ python3 solve_dead_letter_office.py postcard.grid dead_letter_office
+[+] Header: length=40, pairs=20, seed=0x39c6
+[+] FNV-1a check: 0x41cbd9ec (valid)
+[+] Unique character pairs recovered: 20/20
+[+] Accepted input: SecLeaf{th3_p0st0ff1c3_h4s_4_d4rk_s1d3!}
+
+$ copied original binary + postcard.grid + recovered input
+<span class="flag">Delivered.</span></pre></section><p class="note"><b>Proof chain:</b> the original companion file contains the HPL2 header, the ELF contains DLO2 constants, all 20 two-byte rounds recover uniquely, and the original program accepts the reconstructed letter.</p></main></body></html>

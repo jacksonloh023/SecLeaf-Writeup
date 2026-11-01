@@ -1,0 +1,16 @@
+$ python3 solve_reflected_storm.py reflected-storm.pcap
+[+] Capture: reflected-storm.pcap
+[+] IPv4/UDP packets parsed: 1340
+[+] Amplified DNS responses (UDP >= 500 bytes): 600
+[+] Victim: 10.0.55.200
+[+] Reflectors (5):
+    192.0.2.17: 119 amplified responses
+    198.51.100.10: 118 amplified responses
+    198.51.100.22: 133 amplified responses
+    203.0.113.5: 120 amplified responses
+    203.0.113.88: 110 amplified responses
+[+] Matched DNS request/response pairs: 600
+[+] DNS semantics: queries=ANY (all=True), answers include TXT (all=True), response rcode=NOERROR (all=True)
+[+] Example trigger: packet 21  10.0.55.200:59598 -> 198.51.100.22:53  ANY? openresolver-test.example.com
+[+] Example reflection: packet 22  198.51.100.22:53 -> 10.0.55.200:59598  UDP length=994, answer=TXT
+[+] Flag: FLOWTRIQ{10.0.55.200_5_reflectors}

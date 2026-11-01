@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>AFSK Solver Proof</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:1600px;height:1000px;overflow:hidden}body{background:#07131a;color:#d9e8ef;font-family:Inter,system-ui,sans-serif;padding:45px 60px}.header{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}h1{margin:0;color:#f4fbff;font-size:36px;letter-spacing:-.5px}.subtitle{color:#8eacba;margin-top:7px;font-size:17px}.badge{border:1px solid #27758a;background:#0b2933;color:#67e8f9;padding:9px 16px;border-radius:999px;font:700 15px ui-monospace,monospace}.tones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-bottom:18px}.card{background:#0c2029;border:1px solid #234957;border-radius:10px;padding:13px 17px;color:#b9d7e1;font:16px/1.45 "DejaVu Sans Mono",monospace}.terminal{background:#050b0f;border:1px solid #28505f;border-radius:13px;overflow:hidden;box-shadow:0 18px 55px rgba(0,0,0,.4)}.bar{height:44px;background:#10242d;border-bottom:1px solid #28505f;display:flex;align-items:center;padding:0 17px;gap:8px}.dot{width:11px;height:11px;border-radius:50%}.red{background:#ff5f57}.yellow{background:#febc2e}.green{background:#28c840}.bar-title{margin-left:11px;color:#8eacba;font:14px ui-monospace,monospace}pre{margin:0;padding:22px 28px 25px;color:#d6e5eb;font:16px/1.47 "DejaVu Sans Mono",monospace;white-space:pre-wrap}.cmd{color:#67e8f9;font-weight:700}.ok{color:#5eead4}.key{color:#facc15}.flag{color:#07131a;background:#67e8f9;font-weight:900;padding:3px 8px;border-radius:5px}.footer{display:flex;justify-content:space-between;margin-top:17px;color:#7596a4;font-size:14px}
+</style></head><body>
+<div class="header"><div><h1>AFSK Broadcast — Solver Proof</h1><div class="subtitle">Bell 202 tone discrimination and 8N1 UART recovery</div></div><div class="badge">21/21 FRAMES VALID</div></div>
+<div class="tones"><div class="card">MARK / logical 1<br><strong>1200 Hz</strong></div><div class="card">SPACE / logical 0<br><strong>2200 Hz</strong></div><div class="card">SYMBOL RATE<br><strong>1200 baud</strong></div></div>
+<div class="terminal"><div class="bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="bar-title">SecLeaf Writeup — solve_signal_afsk.py</span></div><pre><span class="cmd">$ python3 solve_signal_afsk.py signal.wav</span>
+
+<span class="ok">[+]</span> Format: PCM 16-bit mono at 44100 Hz
+<span class="ok">[+]</span> Total duration: 30.178322 s
+<span class="ok">[+]</span> Estimated noise RMS: 882.95
+<span class="ok">[+]</span> Burst start: <span class="key">30.000000 s</span>
+<span class="ok">[+]</span> Burst duration: 0.178322 s
+<span class="ok">[+]</span> Samples per symbol: 36.7500
+<span class="ok">[+]</span> Symbols recovered: 214
+<span class="ok">[+]</span> Mean tone confidence: 0.9226
+<span class="ok">[+]</span> UART format: 8N1, LSB first
+<span class="ok">[+]</span> Best UART bit offset: 2
+<span class="ok">[+]</span> Valid UART frames: 21/21
+<span class="ok">[+]</span> Payload hex: 5365634c6561667b52346431305f57347633357d0a
+<span class="ok">[+]</span> Payload repr: 'SecLeaf{R4d10_W4v35}\n'
+<span class="ok">[+]</span> Secret message: <span class="flag">SecLeaf{R4d10_W4v35}</span></pre></div>
+<div class="footer"><span>Source: signal.wav · Burst isolated from the final 0.178322 seconds</span><span>SHA256: c5533052cc63b7e2…</span></div>
+</body></html>

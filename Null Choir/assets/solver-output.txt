@@ -1,0 +1,4 @@
+score_header=0x301fe5e678ddec31 rbp=0x866a952e86bb7d8b score_bank=0 trace_key=0xe5
+validated_vm_records=4096
+candidate_hex=5365634c6561667b7468335f63683031725f73316e67355f316e5f3568346430775f6d346368316e333521212121217d
+candidate_ascii=b'SecLeaf{th3_ch01r_s1ng5_1n_5h4d0w_m4ch1n35!!!!!}'

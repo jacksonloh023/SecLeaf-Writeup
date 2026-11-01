@@ -1,0 +1,27 @@
+[+] Input: data.json
+[+] Curve: secp256k1
+[+] Signatures: 11
+[+] Testing every consecutive length-5 window
+    window 00-04: polynomials=False recurrence=False public_key=False
+    window 01-05: polynomials=False recurrence=False public_key=False
+    window 02-06: polynomials=False recurrence=False public_key=False
+    window 03-07: polynomials=True recurrence=True public_key=True
+    window 04-08: polynomials=False recurrence=False public_key=False
+    window 05-09: polynomials=False recurrence=False public_key=False
+    window 06-10: polynomials=False recurrence=False public_key=False
+[+] Valid affine windows: 1
+[+] Vulnerable window: 03-07
+[+] Private scalar: 112265246509443991793501805575047025825485946730594207565612276875367956223710
+[+] Private scalar hex: f833e0b49cd9652c84292c5097b7dbdfd4005fdd2d1cfa7c975cce14a34616de
+[+] Affine multiplier A: 12002070106840870913456878479932247169232302458330232490370288228710231070153
+[+] Affine increment B: 185253452489428381004099908606325852331606826069828067596639196212430708489
+[+] Window nonces:
+    k[03] = 41304517631639763765528057784181352511284851208342180032850117440010981400792
+    k[04] = 94616110354051687246924639039205831752405185240859828276834923572596808652416
+    k[05] = 113134321544840914306842848178060935542394930476825490867707908649977356178624
+    k[06] = 84469879293713744081190541239943336594490140363391225771979851936725341976607
+    k[07] = 28095761905820652288737236573093097102643639695001890321799422277589200472134
+[+] Public-key check: True
+[+] All 11 nonce/r checks: True
+[+] AES-GCM authentication: valid
+[+] Flag: SecLeaf{4ff1n3_n0nc3s_b3nd_th3_curv3}

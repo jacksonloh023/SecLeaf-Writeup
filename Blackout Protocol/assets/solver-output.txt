@@ -1,0 +1,3 @@
+artifact checks: 290 UDP BKP5 frames; 240 BKP37 candidates; 48 authenticated JR records
+accepted input: SecLeaf{n01s3_1n_th3_w1r35_4nd_4ft3r1m4g3s!!!!!}
+binary validation: Authenticated.

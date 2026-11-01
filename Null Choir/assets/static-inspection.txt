@@ -1,0 +1,12 @@
+$ file null_choir canticle.score echoes.trace
+null_choir:     ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=ce7f74ef422fe498147e5b0637545adda62e7e9e, for GNU/Linux 3.2.0, stripped
+canticle.score: data
+echoes.trace:   data
+$ sha256sum null_choir canticle.score echoes.trace
+4ac5a87928fef253dd08009cee440c7c475d7d9788d767d043d25d79bc0e70d8  null_choir
+7d7c7445a50f0089524fc0e6b876c94b857f35ca6638e5024ee465a95e150f09  canticle.score
+14c28a0555e06d366088e740ba6805118333cf7f41f809475482875db87e322e  echoes.trace
+$ xxd -g 1 -l 16 canticle.score
+00000000: 4e 43 53 32 00 10 00 00 31 ec dd 78 e6 e5 1f 30  NCS2....1..x...0
+$ xxd -g 1 -l 16 echoes.trace
+00000000: 45 43 48 38 20 90 cf ca 49 16 04 45 6a c6 c0 21  ECH8 ...I..Ej..!

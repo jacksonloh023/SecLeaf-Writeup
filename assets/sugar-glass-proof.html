@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sugar Glass — Verifier Proof</title><style>body{margin:0;background:#0b1020;color:#e8eefc;font-family:ui-monospace,monospace}main{width:1500px;margin:auto;padding:58px 72px}.k{color:#76d6ff;letter-spacing:.13em;font-weight:bold}h1{font:700 43px system-ui;margin:12px 0}.sub,.note{font:18px system-ui;color:#b7c6df}.panel{background:#111a2f;border:1px solid #26365a;border-radius:16px;overflow:hidden}.bar{padding:15px 20px;background:#17233f;border-bottom:1px solid #26365a}.dots{color:#76d6ff}pre{margin:0;padding:28px 30px;font-size:18px;line-height:1.6;white-space:pre-wrap}.flag{color:#76f5a6;font-weight:bold}.note{margin-top:24px;border-left:4px solid #76d6ff;padding:14px 18px;background:#101a31}</style></head><body><main><div class="k">EVIDENCE 01 · TABLE + ORIGINAL-BINARY ACCEPTANCE</div><h1>Sugar Glass: SGR2 verifier proof</h1><p class="sub">Rendered from the actual static-table inspection, solver run, and disposable-copy acceptance test.</p><section class="panel"><div class="bar"><span class="dots">● ● ●</span> Sugar Glass verification</div><pre>$ objdump -s -j .rodata sugar_glass
+ 2020 53475232 1d0b0542 e55fb15d dfad9bb9  SGR2...B._.]....
+
+$ python3 solve_sugar_glass.py sugar_glass
+[+] SGR2 table offset: 0x2020
+[+] Parameters: length=29, step=11, initial_index=5, initial_state=0x42
+[+] Unique byte candidates recovered: 29/29
+[+] Accepted input: SecLeaf{gl455_h0ld5_4_53cr3t}
+
+$ copied original binary + recovered input
+<span class="flag">Filed.</span></pre></section><p class="note"><b>Proof chain:</b> the SGR2 header is visible in the original ELF data; the solver recovers one byte per verifier round; an executable copy of the original supplied binary returns its success message.</p></main></body></html>
